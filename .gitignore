@@ -1,0 +1,7 @@
+# Dados gerados automaticamente
+dados.json
+**/dados.json
+
+# Python cache
+__pycache__/
+*.pyc
