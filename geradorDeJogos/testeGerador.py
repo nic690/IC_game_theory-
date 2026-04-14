@@ -12,9 +12,9 @@ todos_os_jogos = []
 
 contador = 0
 while contador < 50:
-    jogo1 = jogo(2, 3, 100)
+    jogo1 = jogo(2, 5, 100)
     todos_os_jogos.append(jogo1.jogo)
     contador += 1
 
 salvar_jogos(todos_os_jogos)
-print(f"✅ {len(todos_os_jogos)} jogos salvos em dados.json")
+print(f" {len(todos_os_jogos)} jogos salvos em dados.json")

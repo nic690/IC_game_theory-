@@ -13,7 +13,7 @@ class jogo:
   def montarJogo(self):
      print("Montando matriz do jogo")
 
-     for i in range(self.numJogadores):
+     for i in range(self.nJogadas):
         self.jogo.append([])
         for j in range(self.nJogadas):
            self.jogo[i].append(self.valorDaposicao())
