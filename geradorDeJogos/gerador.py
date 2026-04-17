@@ -22,7 +22,8 @@ class jogo:
 
   def valorDaposicao(self):
     num_inteiro = random.randint(0,self.rangeDePontuacao)
-    return num_inteiro
+    num_inteiro2 = random.randint(0,self.rangeDePontuacao)
+    return (num_inteiro,num_inteiro2)
 
 jogo1=jogo(2,3,100)
 
