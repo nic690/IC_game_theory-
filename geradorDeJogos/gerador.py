@@ -31,8 +31,16 @@ jogo1=jogo(2,3,100)
 
 print(jogo1.jogo)
 
+# exemplo de uso do tradutor
+from tradutor.tradutor import Tradutor
 
-
-
+t = Tradutor('')
+t.fazerFuncao([
+    ('C',  '1 2'),   # clausula com variaveis 1 e 2
+    ('-',  '1'),     # negacao da unidade 1
+    ('C',  '3'),     # clausula com variavel 3
+    ('V',  '2 3'),   # disjuncao das unidades 2 e 3
+])
+print(t.string)
 
 
