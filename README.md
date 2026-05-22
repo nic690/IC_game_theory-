@@ -78,3 +78,43 @@ python testeGerador.py
 ```
 
 O arquivo `dados.json` será criado na pasta `geradorDeJogos/`.
+
+## Como executar o `tradutor`
+
+O `tradutor` recebe uma fórmula lógica em **notação infixa** como string e a traduz para o formato SAT.
+
+A partir da **raiz do projeto**:
+
+```bash
+python -m geradorDeJogos.tradutor.tradutor
+```
+
+### Saída esperada
+
+```
+formula: (1 ^ 2) V (- 1)
+Unit 1 :: Conjunction   :: 1 2
+Unit 2 :: Negation      :: 1
+Unit 3 :: Disjunction   :: 1 2
+
+formula: ((1 -> 2) ^ (2 -> 3)) -> (1 -> 3)
+Unit 1 :: Implication   :: 1 2
+Unit 2 :: Implication   :: 2 3
+Unit 3 :: Conjunction   :: 1 2
+Unit 4 :: Implication   :: 1 3
+Unit 5 :: Implication   :: 3 4
+
+formula: (1 <-> 2)
+Unit 1 :: Biconditional :: 1 2
+```
+
+> **Operadores suportados:** `V` (ou), `^` (e), `-` (não), `->` (implica), `<->` (bicondicional), `+`, `*`, `max`, `min`.
+
+Para usar a classe em outro script:
+
+```python
+from geradorDeJogos.tradutor.tradutor import Tradutor
+
+t = Tradutor()
+print(t.traduzirFormula("(1 ^ 2) V (- 1)"))
+```
